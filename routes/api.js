@@ -55,4 +55,10 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
         { $push: { exercises: body } },
         { new: true }
     )
+    .then(dbWorkout => {
+        res.json(dbWorkout);
+    })
+    .catch(err => {
+        res.status(400).json(err);
+    });
 });
