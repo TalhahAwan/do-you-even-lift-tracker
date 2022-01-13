@@ -48,3 +48,7 @@ router.post("/api/workouts", ({ body }, res) => {
         res.status(400).json(err);
     });
 });
+
+router.put("/api/workouts/:id", ({ body, params }, res) => {
+    
+});
