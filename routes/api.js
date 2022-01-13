@@ -10,4 +10,10 @@ router.get("/api/workouts", (req, res) => {
             }
         }
     ])
+    .then(dbWorkout => {
+        res.json(dbWorkout);
+    })
+    .catch(err => {
+        res.status(400).json(err);
+    });
 });
